@@ -1,0 +1,79 @@
+@use './styles/color_themes' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,500&display=swap');
+
+theme__light{
+    background: inherit;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    @include themeify($themes){
+        background-color: themed("background-primary")
+    };
+    
+}
+
+html body{
+    background-color: inherit;
+    display: flex;
+    margin: 0 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+.btn {
+    border-radius: 1rem;
+    padding: 10px 20px 15px;
+    font-size: 3rem;
+    
+    cursor:pointer;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    @include themeify($themes){
+        color: themed($text-primary);
+        background-color: themed("text-secondary")
+    };
+
+    &:hover{
+        margin-top: -0.75rem;
+    }
+}
+
+h1{
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 2.5rem;
+
+    @include themeify($themes){
+        color: themed("text-primary");
+    };
+}
+
+h2{
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+
+    @include themeify($themes){
+        color: themed("highlight-secondary");
+    };
+}
+
+h4{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1rem;
+    @include themeify($themes){
+        color: themed("text-secondary");
+    };
+    
+}
+
